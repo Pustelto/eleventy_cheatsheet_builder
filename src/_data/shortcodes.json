@@ -1,0 +1,126 @@
+{
+  "title": "VIM",
+  "sections": [
+    {
+      "section": "Motions",
+      "description": "**Tip:** Prefix a cursor movement command with a number to repeat it. For example, 4j moves down 4 lines.",
+      "codes": {
+        "h": "Move cursor left",
+        "j": "Move cursor down",
+        "k": "Move cursor up",
+        "l": "Move cursor right",
+        "w": "Move cursor at the beginning of a word",
+        "b": "Move cursor back at the beginning of a word",
+        "e": "Move cursor forward at the end of word",
+        "^": "Move cursor at the beginning of a line",
+        "$": "Move cursor at the end of line",
+        "H": "move to top of screen",
+        "M": "move to middle of screen",
+        "L": "move to bottom of screen",
+        "%": "move to matching character (default supported pairs: '()', '{}', '[]'",
+        "gg": "go to the first line of the document",
+        "G": "go to the last line of the document",
+        "5gg or 5G": "go to line 5",
+        "fx": "jump to next occurrence of character x",
+        "tx": "jump to before next occurrence of character x",
+        "Fx": "jump to previous occurence of character x",
+        "Tx": "jump to after previous occurence of character x",
+        ";": "repeat previous f, t, F or T movement",
+        ",": "repeat previous f, t, F or T movement, backwards",
+        "}": "jump to next paragraph (or function/block, when editing code)",
+        "{": "jump to previous paragraph (or function/block, when editing code)",
+        "zz": "center cursor on screen",
+        "Ctrl + e": "move screen down one line (without moving cursor)",
+        "Ctrl + y": "move screen up one line (without moving cursor)",
+        "Ctrl + b": "move back one full screen",
+        "Ctrl + f": "move forward one full screen",
+        "Ctrl + d": "move forward 1/2 a screen",
+        "Ctrl + u": "move back 1/2 a screen"
+      }
+    },
+    {
+      "section": "Suround",
+      "codes": {
+        "y s <motion> <desired>": "Add desired surround around text defined by `motion`",
+        "d s <existing>": "Delete `existing` surround",
+        "c s <existing> <desired>": "Change `existing` surround to `desired`",
+        "S <desired>": "Surround when in visual modes (surrounds full selection)"
+      }
+    },
+    {
+      "section": "Insert",
+      "codes": {
+        "ea": "insert (append) at the end of the word",
+        "bi": "insert before the word",
+        "Ctrl + h": "delete the character before the cursor during insert mode",
+        "Ctrl + w": "delete word before the cursor during insert mode",
+        "Ctrl + j": "begin new line during insert mode"
+      }
+    },
+    {
+      "section": "Editting",
+      "codes": {
+        "r": "replace character",
+        "J": "join lines with space between",
+        "gJ": "join lines without space between",
+        "g~": "change case up to motion",
+        "gu": "change to lowercase up to motion",
+        "gU": "change to uppercase up to motion",
+        "cc": "change (replace) entire line",
+        "C": "change (replace) to the end of the line ",
+        "cw": "change (replace) to the end of the word",
+        "s": "delete character and substitute text",
+        "S": "delete line and substitute text (same as cc)",
+        "xp": "transpose two letters (delete and paste)",
+        ".": "repeat last command"
+      }
+    },
+    {
+      "section": "Visual mode",
+      "codes": {
+        "aw": "mark a word",
+        "ab": "a block with ()",
+        "aB": "a block with {}",
+        "at": "a block with <> tags",
+        "ib": "inner block with ()",
+        "iB": "inner block with {}",
+        "it": "inner block with <> tags"
+      }
+    },
+    {
+      "section": "Search and replace",
+      "codes": {
+        "/pattern": "search for pattern",
+        "?pattern": "search backward for pattern",
+        "\\vpattern": "'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)",
+        "n": "repeat search in same direction",
+        "N": "repeat search in opposite direction",
+        ":%s/old/new/g": "replace all old with new throughout file",
+        ":%s/old/new/gc": "replace all old with new throughout file with confirmations"
+      }
+    },
+    {
+      "section": "Marks",
+      "codes": {
+        "`\"": "go to the position when last editing this file",
+        "`.": "go to the position of the last change in this file",
+        "``": "go to the position before the last jump"
+      }
+    },
+    {
+      "section": "Comments",
+      "codes": {
+        "gc": "toggles line comment. For example gcc to toggle line comment for current line and gc2j to toggle line comments for the current line and the next two lines.",
+        "gC": "toggles block comment. For example gCi) to comment out everything within parentheses."
+      }
+    },
+    {
+      "section": "Other VS Code commands",
+      "codes": {
+        "gd": "toggles line comment. For example gcc to toggle line comment for current line and gc2j to toggle line comments for the current line and the next two lines.",
+        "gb": "toggles block comment. For example gCi) to comment out everything within parentheses.",
+        "af": "visual mode command which selects increasingly large blocks of text."
+      }
+    }
+  ]
+}

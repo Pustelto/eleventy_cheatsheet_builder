@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./print.css" media="print"/>
+    <style>
+      body {
+        margin: 0;
+        font-size: 13px;
+        font-family: sans-serif;
+      }
+
+      .codesWrapper {
+        column-count: 4;
+        gap: 30px;
+      }
+
+      .codesWrapper > div:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      h2 {
+        page-break-after: avoid;
+        break-inside: avoid-column;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      dl {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        row-gap: 6px;
+        column-gap: 14px;
+        widows: 3;
+        orphans: 3;
+      }
+
+      dt span {
+        font-family: monospace, monospace;
+        background-color: #D0D0D0;
+        border-radius: 3px;
+        padding: 2px 4px;
+        font-size: 13px;
+        line-height: 1.5;
+        font-weight: 700;
+      }
+
+      dd {
+        margin: 0;
+      }
+
+      dd p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{shortcodes.title}}</h1>
+    <div class="codesWrapper">
+      {% for item in shortcodes.sections %}
+        <div>
+          <h2>{{item.section}}</h2>
+          {% if item.description %}{{item.description | md | safe }}
+          {% endif %}
+          <dl>
+            {% for shortcode, description in item.codes %}
+              <dt>
+                <span>{{ shortcode}}</span></dt>
+              <dd>{{ description | md | safe }}</dd>
+            {% endfor %}
+          </dl>
+        </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

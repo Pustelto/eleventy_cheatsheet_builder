@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./print.css" media="print"/>
+    <style>
+      body {
+        margin: 0;
+        font-size: 13px;
+        font-family: sans-serif;
+      }
+
+      .codesWrapper {
+        column-count: 4;
+        gap: 30px;
+      }
+
+      .codesWrapper > div:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      h2 {
+        page-break-after: avoid;
+        break-inside: avoid-column;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      dl {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        row-gap: 6px;
+        column-gap: 14px;
+        widows: 3;
+        orphans: 3;
+      }
+
+      dt span {
+        font-family: monospace, monospace;
+        background-color: #D0D0D0;
+        border-radius: 3px;
+        padding: 2px 4px;
+        font-size: 13px;
+        line-height: 1.5;
+        font-weight: 700;
+      }
+
+      dd {
+        margin: 0;
+      }
+
+      dd p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>VIM</h1>
+    <div class="codesWrapper">
+      
+        <div>
+          <h2>Motions</h2>
+          <p><strong>Tip:</strong> Prefix a cursor movement command with a number to repeat it. For example, 4j moves down 4 lines.</p>
+
+          
+          <dl>
+            
+              <dt>
+                <span>h</span></dt>
+              <dd><p>Move cursor left</p>
+</dd>
+            
+              <dt>
+                <span>j</span></dt>
+              <dd><p>Move cursor down</p>
+</dd>
+            
+              <dt>
+                <span>k</span></dt>
+              <dd><p>Move cursor up</p>
+</dd>
+            
+              <dt>
+                <span>l</span></dt>
+              <dd><p>Move cursor right</p>
+</dd>
+            
+              <dt>
+                <span>w</span></dt>
+              <dd><p>Move cursor at the beginning of a word</p>
+</dd>
+            
+              <dt>
+                <span>b</span></dt>
+              <dd><p>Move cursor back at the beginning of a word</p>
+</dd>
+            
+              <dt>
+                <span>e</span></dt>
+              <dd><p>Move cursor forward at the end of word</p>
+</dd>
+            
+              <dt>
+                <span>^</span></dt>
+              <dd><p>Move cursor at the beginning of a line</p>
+</dd>
+            
+              <dt>
+                <span>$</span></dt>
+              <dd><p>Move cursor at the end of line</p>
+</dd>
+            
+              <dt>
+                <span>H</span></dt>
+              <dd><p>move to top of screen</p>
+</dd>
+            
+              <dt>
+                <span>M</span></dt>
+              <dd><p>move to middle of screen</p>
+</dd>
+            
+              <dt>
+                <span>L</span></dt>
+              <dd><p>move to bottom of screen</p>
+</dd>
+            
+              <dt>
+                <span>%</span></dt>
+              <dd><p>move to matching character (default supported pairs: '()', '{}', '[]'</p>
+</dd>
+            
+              <dt>
+                <span>gg</span></dt>
+              <dd><p>go to the first line of the document</p>
+</dd>
+            
+              <dt>
+                <span>G</span></dt>
+              <dd><p>go to the last line of the document</p>
+</dd>
+            
+              <dt>
+                <span>5gg or 5G</span></dt>
+              <dd><p>go to line 5</p>
+</dd>
+            
+              <dt>
+                <span>fx</span></dt>
+              <dd><p>jump to next occurrence of character x</p>
+</dd>
+            
+              <dt>
+                <span>tx</span></dt>
+              <dd><p>jump to before next occurrence of character x</p>
+</dd>
+            
+              <dt>
+                <span>Fx</span></dt>
+              <dd><p>jump to previous occurence of character x</p>
+</dd>
+            
+              <dt>
+                <span>Tx</span></dt>
+              <dd><p>jump to after previous occurence of character x</p>
+</dd>
+            
+              <dt>
+                <span>;</span></dt>
+              <dd><p>repeat previous f, t, F or T movement</p>
+</dd>
+            
+              <dt>
+                <span>,</span></dt>
+              <dd><p>repeat previous f, t, F or T movement, backwards</p>
+</dd>
+            
+              <dt>
+                <span>}</span></dt>
+              <dd><p>jump to next paragraph (or function/block, when editing code)</p>
+</dd>
+            
+              <dt>
+                <span>{</span></dt>
+              <dd><p>jump to previous paragraph (or function/block, when editing code)</p>
+</dd>
+            
+              <dt>
+                <span>zz</span></dt>
+              <dd><p>center cursor on screen</p>
+</dd>
+            
+              <dt>
+                <span>Ctrl + e</span></dt>
+              <dd><p>move screen down one line (without moving cursor)</p>
+</dd>
+            
+              <dt>
+                <span>Ctrl + y</span></dt>
+              <dd><p>move screen up one line (without moving cursor)</p>
+</dd>
+            
+              <dt>
+                <span>Ctrl + b</span></dt>
+              <dd><p>move back one full screen</p>
+</dd>
+            
+              <dt>
+                <span>Ctrl + f</span></dt>
+              <dd><p>move forward one full screen</p>
+</dd>
+            
+              <dt>
+                <span>Ctrl + d</span></dt>
+              <dd><p>move forward 1/2 a screen</p>
+</dd>
+            
+              <dt>
+                <span>Ctrl + u</span></dt>
+              <dd><p>move back 1/2 a screen</p>
+</dd>
+            
+          </dl>
+        </div>
+      
+        <div>
+          <h2>Suround</h2>
+          
+          <dl>
+            
+              <dt>
+                <span>y s &lt;motion&gt; &lt;desired&gt;</span></dt>
+              <dd><p>Add desired surround around text defined by <code>motion</code></p>
+</dd>
+            
+              <dt>
+                <span>d s &lt;existing&gt;</span></dt>
+              <dd><p>Delete <code>existing</code> surround</p>
+</dd>
+            
+              <dt>
+                <span>c s &lt;existing&gt; &lt;desired&gt;</span></dt>
+              <dd><p>Change <code>existing</code> surround to <code>desired</code></p>
+</dd>
+            
+              <dt>
+                <span>S &lt;desired&gt;</span></dt>
+              <dd><p>Surround when in visual modes (surrounds full selection)</p>
+</dd>
+            
+          </dl>
+        </div>
+      
+        <div>
+          <h2>Insert</h2>
+          
+          <dl>
+            
+              <dt>
+                <span>ea</span></dt>
+              <dd><p>insert (append) at the end of the word</p>
+</dd>
+            
+              <dt>
+                <span>bi</span></dt>
+              <dd><p>insert before the word</p>
+</dd>
+            
+              <dt>
+                <span>Ctrl + h</span></dt>
+              <dd><p>delete the character before the cursor during insert mode</p>
+</dd>
+            
+              <dt>
+                <span>Ctrl + w</span></dt>
+              <dd><p>delete word before the cursor during insert mode</p>
+</dd>
+            
+              <dt>
+                <span>Ctrl + j</span></dt>
+              <dd><p>begin new line during insert mode</p>
+</dd>
+            
+          </dl>
+        </div>
+      
+        <div>
+          <h2>Editting</h2>
+          
+          <dl>
+            
+              <dt>
+                <span>r</span></dt>
+              <dd><p>replace character</p>
+</dd>
+            
+              <dt>
+                <span>J</span></dt>
+              <dd><p>join lines with space between</p>
+</dd>
+            
+              <dt>
+                <span>gJ</span></dt>
+              <dd><p>join lines without space between</p>
+</dd>
+            
+              <dt>
+                <span>g~</span></dt>
+              <dd><p>change case up to motion</p>
+</dd>
+            
+              <dt>
+                <span>gu</span></dt>
+              <dd><p>change to lowercase up to motion</p>
+</dd>
+            
+              <dt>
+                <span>gU</span></dt>
+              <dd><p>change to uppercase up to motion</p>
+</dd>
+            
+              <dt>
+                <span>cc</span></dt>
+              <dd><p>change (replace) entire line</p>
+</dd>
+            
+              <dt>
+                <span>C</span></dt>
+              <dd><p>change (replace) to the end of the line</p>
+</dd>
+            
+              <dt>
+                <span>cw</span></dt>
+              <dd><p>change (replace) to the end of the word</p>
+</dd>
+            
+              <dt>
+                <span>s</span></dt>
+              <dd><p>delete character and substitute text</p>
+</dd>
+            
+              <dt>
+                <span>S</span></dt>
+              <dd><p>delete line and substitute text (same as cc)</p>
+</dd>
+            
+              <dt>
+                <span>xp</span></dt>
+              <dd><p>transpose two letters (delete and paste)</p>
+</dd>
+            
+              <dt>
+                <span>.</span></dt>
+              <dd><p>repeat last command</p>
+</dd>
+            
+          </dl>
+        </div>
+      
+        <div>
+          <h2>Visual mode</h2>
+          
+          <dl>
+            
+              <dt>
+                <span>aw</span></dt>
+              <dd><p>mark a word</p>
+</dd>
+            
+              <dt>
+                <span>ab</span></dt>
+              <dd><p>a block with ()</p>
+</dd>
+            
+              <dt>
+                <span>aB</span></dt>
+              <dd><p>a block with {}</p>
+</dd>
+            
+              <dt>
+                <span>at</span></dt>
+              <dd><p>a block with &lt;&gt; tags</p>
+</dd>
+            
+              <dt>
+                <span>ib</span></dt>
+              <dd><p>inner block with ()</p>
+</dd>
+            
+              <dt>
+                <span>iB</span></dt>
+              <dd><p>inner block with {}</p>
+</dd>
+            
+              <dt>
+                <span>it</span></dt>
+              <dd><p>inner block with &lt;&gt; tags</p>
+</dd>
+            
+          </dl>
+        </div>
+      
+        <div>
+          <h2>Search and replace</h2>
+          
+          <dl>
+            
+              <dt>
+                <span>/pattern</span></dt>
+              <dd><p>search for pattern</p>
+</dd>
+            
+              <dt>
+                <span>?pattern</span></dt>
+              <dd><p>search backward for pattern</p>
+</dd>
+            
+              <dt>
+                <span>\vpattern</span></dt>
+              <dd><p>'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</p>
+</dd>
+            
+              <dt>
+                <span>n</span></dt>
+              <dd><p>repeat search in same direction</p>
+</dd>
+            
+              <dt>
+                <span>N</span></dt>
+              <dd><p>repeat search in opposite direction</p>
+</dd>
+            
+              <dt>
+                <span>:%s/old/new/g</span></dt>
+              <dd><p>replace all old with new throughout file</p>
+</dd>
+            
+              <dt>
+                <span>:%s/old/new/gc</span></dt>
+              <dd><p>replace all old with new throughout file with confirmations</p>
+</dd>
+            
+          </dl>
+        </div>
+      
+        <div>
+          <h2>Marks</h2>
+          
+          <dl>
+            
+              <dt>
+                <span>`&quot;</span></dt>
+              <dd><p>go to the position when last editing this file</p>
+</dd>
+            
+              <dt>
+                <span>`.</span></dt>
+              <dd><p>go to the position of the last change in this file</p>
+</dd>
+            
+              <dt>
+                <span>``</span></dt>
+              <dd><p>go to the position before the last jump</p>
+</dd>
+            
+          </dl>
+        </div>
+      
+        <div>
+          <h2>Comments</h2>
+          
+          <dl>
+            
+              <dt>
+                <span>gc</span></dt>
+              <dd><p>toggles line comment. For example gcc to toggle line comment for current line and gc2j to toggle line comments for the current line and the next two lines.</p>
+</dd>
+            
+              <dt>
+                <span>gC</span></dt>
+              <dd><p>toggles block comment. For example gCi) to comment out everything within parentheses.</p>
+</dd>
+            
+          </dl>
+        </div>
+      
+        <div>
+          <h2>Other VS Code commands</h2>
+          
+          <dl>
+            
+              <dt>
+                <span>gd</span></dt>
+              <dd><p>toggles line comment. For example gcc to toggle line comment for current line and gc2j to toggle line comments for the current line and the next two lines.</p>
+</dd>
+            
+              <dt>
+                <span>gb</span></dt>
+              <dd><p>toggles block comment. For example gCi) to comment out everything within parentheses.</p>
+</dd>
+            
+              <dt>
+                <span>af</span></dt>
+              <dd><p>visual mode command which selects increasingly large blocks of text.</p>
+</dd>
+            
+          </dl>
+        </div>
+      
+    </div>
+  </body>
+</html>

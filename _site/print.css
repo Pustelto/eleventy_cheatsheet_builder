@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  /* width: 297mm;
+  height: 210mm; */
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+.codesWrapper {
+  column-count: 4;
+  gap: 30px;
+}
+
+.codesWrapper > div:not(:last-child) {
+  margin-bottom: 2rem;
+  widows: 3;
+  orphans: 3;
+}
+
+h2 {
+  page-break-after: avoid;
+  break-inside: avoid-column;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  row-gap: 6px;
+  column-gap: 14px;
+  widows: 3;
+  orphans: 3;
+}
+
+dt span {
+  font-family: monospace, monospace;
+  background-color: #d0d0d0;
+  border-radius: 3px;
+  padding: 2px 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+dd {
+  margin: 0;
+}
+
+dd p {
+  margin: 0;
+}

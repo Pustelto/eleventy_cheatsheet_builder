@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0;
+        width: 297mm;
+        height: 210mm;
+      }
+
+      .codesWrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(90mm,1fr));
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{shortcodes.title}}</h1>
+    <div class="codesWrapper">
+      {% for item in shortcodes.sections %}
+        <div>
+          <h2>{{item.section}}</h2>
+          <p>{{item.description}}</p>
+          {% for shortcode, description in item.codes %}
+            <dl>
+              <dt>{{ shortcode}}</dt>
+              <dd>
+                {% include 'description.njk' %}
+              </dd>
+            </dl>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

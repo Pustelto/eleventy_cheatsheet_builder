@@ -1,0 +1,16 @@
+{
+  "name": "cheatsheet_template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@11ty/eleventy": "0.12.1",
+    "markdown-it": "12.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
